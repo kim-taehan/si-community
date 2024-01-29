@@ -8,6 +8,7 @@ import org.devleopx.sicommunity.developer.service.DeveloperService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 import java.time.LocalDate;
@@ -28,6 +29,7 @@ class DeveloperApiTest extends WebMvcTestSupport {
     private DeveloperService developerService;
 
     @Test
+    @DisplayName("신규 개발자 등록 API 수행하면, 201 응답을 받는다.")
     void addDeveloper() throws Exception {
         // given
         when(developerService.addDeveloper(any())).thenReturn(100L);
@@ -44,7 +46,7 @@ class DeveloperApiTest extends WebMvcTestSupport {
                         .with(csrf())
                 )
                 .andDo(print())
-                .andExpect(status().is(201))
+                .andExpect(status().is(HttpStatus.CREATED.value()))
                 .equals(100L);
 
     }
