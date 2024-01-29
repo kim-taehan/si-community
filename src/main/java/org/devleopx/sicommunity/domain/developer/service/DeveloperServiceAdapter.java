@@ -34,6 +34,6 @@ public class DeveloperServiceAdapter implements DeveloperService {
     @Override
     public Page<FindDevelopersResponse> findDevelopers(FindDevelopersRequest request, Pageable pageable) {
         Page<Developer> developers = developerRepository.findDevelopers(request, pageable);
-        return null;
+        return developers.map(FindDevelopersResponse::fromEntity);
     }
 }
