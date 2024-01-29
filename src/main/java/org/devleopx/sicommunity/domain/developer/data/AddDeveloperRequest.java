@@ -1,8 +1,8 @@
-package org.devleopx.sicommunity.developer.data;
+package org.devleopx.sicommunity.domain.developer.data;
 
 import lombok.Builder;
-import org.devleopx.sicommunity.developer.entity.Developer;
-import org.devleopx.sicommunity.developer.enums.Gender;
+import org.devleopx.sicommunity.domain.developer.entity.Developer;
+import org.devleopx.sicommunity.domain.developer.enums.Gender;
 import org.springframework.util.Assert;
 
 import java.time.LocalDate;

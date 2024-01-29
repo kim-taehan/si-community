@@ -1,16 +1,14 @@
-package org.devleopx.sicommunity.developer.entity;
+package org.devleopx.sicommunity.domain.developer.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.devleopx.sicommunity.developer.entity.embeds.Identifier;
-import org.devleopx.sicommunity.developer.enums.Gender;
+import org.devleopx.sicommunity.domain.developer.entity.embeds.Identifier;
+import org.devleopx.sicommunity.domain.developer.enums.Gender;
 
 import java.time.LocalDate;
 
-import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.GenerationType.*;
 import static lombok.AccessLevel.*;
 

@@ -1,9 +1,8 @@
-package org.devleopx.sicommunity.developer.data;
+package org.devleopx.sicommunity.domain.developer.data;
 
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import org.devleopx.sicommunity.developer.entity.Developer;
-import org.devleopx.sicommunity.developer.enums.Gender;
+import org.devleopx.sicommunity.domain.developer.entity.Developer;
+import org.devleopx.sicommunity.domain.developer.enums.Gender;
 
 import java.time.LocalDate;
 

@@ -1,13 +1,11 @@
-package org.devleopx.sicommunity.developer.service;
+package org.devleopx.sicommunity.domain.developer.service;
 
-import org.assertj.core.api.Assertions;
-import org.assertj.core.groups.Tuple;
 import org.devleopx.sicommunity.SpringBootTestSupport;
-import org.devleopx.sicommunity.developer.data.AddDeveloperRequest;
-import org.devleopx.sicommunity.developer.data.GetDeveloperResponse;
-import org.devleopx.sicommunity.developer.entity.Developer;
-import org.devleopx.sicommunity.developer.enums.Gender;
-import org.devleopx.sicommunity.developer.repository.DeveloperRepository;
+import org.devleopx.sicommunity.domain.developer.data.AddDeveloperRequest;
+import org.devleopx.sicommunity.domain.developer.data.GetDeveloperResponse;
+import org.devleopx.sicommunity.domain.developer.entity.Developer;
+import org.devleopx.sicommunity.domain.developer.enums.Gender;
+import org.devleopx.sicommunity.domain.developer.service.DeveloperService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

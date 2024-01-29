@@ -1,7 +1,7 @@
 package org.devleopx.sicommunity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.devleopx.sicommunity.developer.api.DeveloperApi;
+import org.devleopx.sicommunity.domain.developer.api.DeveloperApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.security.test.context.support.WithMockUser;

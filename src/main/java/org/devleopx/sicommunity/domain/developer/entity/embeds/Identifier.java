@@ -1,12 +1,11 @@
-package org.devleopx.sicommunity.developer.entity.embeds;
+package org.devleopx.sicommunity.domain.developer.entity.embeds;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Enumerated;
-import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.devleopx.sicommunity.developer.enums.Gender;
+import org.devleopx.sicommunity.domain.developer.enums.Gender;
 
 import java.time.LocalDate;
 
