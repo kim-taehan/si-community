@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @Transactional
 @ActiveProfiles("test")
-public abstract class SpringBootTestSupport {
-    @PersistenceContext
-    protected EntityManager entityManager;
+public abstract class SpringBootTestSupport extends DefaultTestSupport {
 
 //    @Autowired
 //    protected PasswordEncoder passwordEncoder;

@@ -1,17 +1,22 @@
 package org.devleopx.sicommunity.developer.entity;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.devleopx.sicommunity.developer.entity.embeds.Identifier;
 import org.devleopx.sicommunity.developer.enums.Gender;
 
 import java.time.LocalDate;
 
 import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.GenerationType.*;
+import static lombok.AccessLevel.*;
 
 @Entity
 @Getter
+@NoArgsConstructor(access = PROTECTED)
 public class Developer {
 
     @Id
@@ -22,15 +27,14 @@ public class Developer {
     @Column(length = 10)
     private String developerName;
 
-    private LocalDate birthDate;
+    @Embedded
+    private Identifier identifier;
 
-    @Enumerated(STRING)
-    private Gender gender;
+
 
     @Builder
     public Developer(String developerName, LocalDate birthDate, Gender gender) {
         this.developerName = developerName;
-        this.birthDate = birthDate;
-        this.gender = gender;
+        this.identifier = new Identifier(birthDate, gender);
     }
 }
