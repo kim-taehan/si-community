@@ -1,6 +1,5 @@
 package org.devleopx.sicommunity.domain.developer.api;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.devleopx.sicommunity.WebMvcTestSupport;
 import org.devleopx.sicommunity.domain.developer.data.AddDeveloperRequest;
@@ -23,7 +22,6 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @DisplayName("[api] developer api")
@@ -45,7 +43,7 @@ class DeveloperApiTest extends WebMvcTestSupport {
 
 
         // when & then
-        mockMvc.perform(post("/developers")
+        mockMvc.perform(post("/api/v1/developers")
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .content(objectMapper.writeValueAsString(request))
                         .with(csrf())
@@ -69,7 +67,7 @@ class DeveloperApiTest extends WebMvcTestSupport {
 
 
         // when & then
-        mockMvc.perform(post("/developers")
+        mockMvc.perform(post("/api/v1/developers")
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .content(objectNode.toString())
                         .with(csrf())
@@ -87,7 +85,7 @@ class DeveloperApiTest extends WebMvcTestSupport {
         when(developerService.getDeveloper(100L)).thenReturn(response);
 
         // when & then
-        mockMvc.perform(get("/developers/{developerId}", 100L)
+        mockMvc.perform(get("/api/v1/developers/{developerId}", 100L)
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .with(csrf())
                 )

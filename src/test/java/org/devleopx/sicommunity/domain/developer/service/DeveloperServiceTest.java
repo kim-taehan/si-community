@@ -30,6 +30,7 @@ class DeveloperServiceTest extends SpringBootTestSupport {
 
 
     @Nested
+    @DisplayName("신규 개발자 등록한다.")
     class AddDeveloper {
 
         @Test

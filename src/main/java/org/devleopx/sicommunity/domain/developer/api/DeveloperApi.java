@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/developers")
+@RequestMapping("/api/v1/developers")
 @RequiredArgsConstructor
 public class DeveloperApi {
 
@@ -24,9 +24,6 @@ public class DeveloperApi {
     @PostMapping("")
     public ResponseEntity<Long> addDeveloper(@RequestBody AddDeveloperRequest request) {
         Long developerId = developerService.addDeveloper(request);
-
-//        return new ResponseEntity(developerId, HttpStatusCode.valueOf(201));
-
         return new ResponseEntity(developerId, HttpStatus.CREATED);
     }
 
